@@ -27,6 +27,8 @@ class BattleFrontierRunner {
         BattleFrontierBattle.generateNewEnemy();
         BattleFrontierRunner.timeLeft(GameConstants.GYM_TIME);
         BattleFrontierRunner.timeLeftPercentage(100);
+        //attack speed based on highest stage
+        BattleFrontierBattle.attackSpeed = Math.min(900, 900 / (App.game.statistics.battleFrontierHighestStageCompleted() / 100));
         App.game.gameState = GameConstants.GameState.battleFrontier;
     }
 
